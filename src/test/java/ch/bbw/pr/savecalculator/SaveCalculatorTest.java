@@ -150,18 +150,67 @@ public class SaveCalculatorTest {
     //Testfälle zu Division
 
     @Test
-    public void divisionTrue() {
+    public void division() {
         SaveCalculator testee = new SaveCalculator();
-        int value1 = 10;
-        int value2 = 5;
+        int value1 = 20;
+        int value2 = 10;
         assertTrue(testee.division(value1, value2) == 2);
     }
 
     @Test
-    public void divisionFalse() {
+    public void divisionMitMin() {
         SaveCalculator testee = new SaveCalculator();
-        int value1 = 10;
+        int value1 = Integer.MIN_VALUE;
+        int value2 = 23;
+        assertTrue(testee.division(value1, value2) == -93368854);
+    }
+
+    @Test
+    public void divisionMitMAXint() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = Integer.MAX_VALUE;
+        int value2 = 2;
+        assertTrue(testee.division(value1, value2) == 1073741823);
+    }
+
+    @Test
+    public void divisionMitMINintMAXint() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = Integer.MAX_VALUE;
+        int value2 = Integer.MAX_VALUE;
+        assertTrue(testee.division(value1, value2) == 1);
+    }
+
+    @Test
+    public void divisionMitNegativemInt() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = -10;
         int value2 = 3;
-        assertFalse(testee.division(value1, value2) == 2);
+        assertTrue(testee.division(value1, value2) == -3);
+    }
+
+
+    @Test
+    public void divisionMit0 () {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = 0;
+        int value2 = 10;
+        assertTrue(testee.division(value1, value2) == 0);
+    }
+
+    @Test (expected = ArithmeticException.class)
+    public void divisionMit00 () {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = 0;
+        int value2 = 0;
+        assertTrue(testee.division(value1, value2) == 0);
+    }
+
+    @Test
+    public void divisionMitNegativ2 () {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = -10;
+        int value2 = -10;
+        assertTrue(testee.division(value1, value2) == 1);
     }
 }
