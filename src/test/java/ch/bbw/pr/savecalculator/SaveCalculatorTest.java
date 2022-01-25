@@ -47,6 +47,15 @@ public class SaveCalculatorTest {
         assertTrue(testee.summe(value1, value2) == -1);
     }
 
+    @Test
+    public void summeMitNegativemInt() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = -10;
+        int value2 = 3;
+        assertTrue(testee.summe(value1, value2) == -7);
+    }
+
+
     //Testfälle zu Subtraktion
 
     @Test
