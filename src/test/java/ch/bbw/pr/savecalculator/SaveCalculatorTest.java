@@ -82,21 +82,69 @@ public class SaveCalculatorTest {
 
 
     //Testfälle zu Subtraktion
-
     @Test
-    public void subtraktionTrue() { 
+    public void subtraktion() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 10;
         int value2 = 20;
         assertTrue(testee.subtraktion(value1, value2) == -10);
     }
 
-    @Test
-    public void subtraktionFalse() {
+    @Test (expected = ArithmeticException.class)
+    public void subtraktionMitMinInt() {
         SaveCalculator testee = new SaveCalculator();
-        int value1 = 10;
-        int value2 = 30;
-        assertFalse(testee.subtraktion(value1, value2) == -10);
+        int value1 = Integer.MIN_VALUE;
+        int value2 = 23;
+        testee.subtraktion(value1, value2);
+    }
+
+    @Test
+    public void subtraktionMitMAXint() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = Integer.MAX_VALUE;
+        int value2 = 1;
+        assertTrue(testee.subtraktion(value1, value2) == 2147483646);
+    }
+
+    @Test
+    public void subtraktionMitMINintMAXint() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = Integer.MAX_VALUE;
+        int value2 = Integer.MAX_VALUE;
+        assertTrue(testee.subtraktion(value1, value2) == 0);
+    }
+
+    @Test
+    public void subtraktionMitNegativemInt() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = -10;
+        int value2 = 3;
+        assertTrue(testee.subtraktion(value1, value2) == -13);
+    }
+
+
+    @Test
+    public void subtraktionMit0 () {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = 0;
+        int value2 = 10;
+        assertTrue(testee.subtraktion(value1, value2) == -10);
+    }
+
+    @Test
+    public void subtraktionMit00 () {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = 0;
+        int value2 = 0;
+        assertTrue(testee.summe(value1, value2) == 0);
+    }
+
+    @Test
+    public void subtraktionMitNegativ2 () {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = -10;
+        int value2 = -10;
+        assertTrue(testee.subtraktion(value1, value2) == 0);
     }
 
     //Testfälle zu Division
