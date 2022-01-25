@@ -16,19 +16,11 @@ public class SaveCalculatorTest {
 
     //Testfälle zu Addition
     @Test
-    public void summeTrue() {
+    public void summe() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 10;
         int value2 = 20;
         assertTrue(testee.summe(value1, value2) == 30);
-    }
-
-    @Test
-    public void summeFalse() {
-        SaveCalculator testee = new SaveCalculator();
-        int value1 = 10;
-        int value2 = 20;
-        assertFalse(testee.summe(value1, value2) == 40);
     }
 
     @Test (expected = ArithmeticException.class)
@@ -36,7 +28,15 @@ public class SaveCalculatorTest {
         SaveCalculator testee = new SaveCalculator();
         int value1 = Integer.MAX_VALUE;
         int value2 = 23;
-        assertFalse(testee.summe(value1, value2) != 0);
+        testee.summe(value1, value2);
+    }
+
+    @Test
+    public void summeMitMINint() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = Integer.MIN_VALUE;
+        int value2 = 1;
+        assertTrue(testee.summe(value1, value2) == -2147483647);
     }
 
     //Testfälle zu Subtraktion
