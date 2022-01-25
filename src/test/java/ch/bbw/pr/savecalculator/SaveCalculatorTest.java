@@ -213,4 +213,31 @@ public class SaveCalculatorTest {
         int value2 = -10;
         assertTrue(testee.division(value1, value2) == 1);
     }
+
+    //sichtbarkeitstests
+    // Geht nicht weil private
+    //@Test
+    //public void sichtbarkeitSumme() {
+    //    SaveCalculator testee = new SaveCalculator();
+    //    int value1 = 20;
+    //    int value2 = 10;
+    //    assertTrue(testee.summeprivate(value1, value2) == 30);
+    //}
+
+    @Test
+    public void summeProtected() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = 10;
+        int value2 = 20;
+        assertTrue(testee.summeprotected(value1, value2) == 30);
+    }
+
+    @Test
+    public void summePkgProtected() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = 10;
+        int value2 = 20;
+        assertTrue(testee.summepkgprotected(value1, value2) == 30);
+    }
+
 }
