@@ -39,6 +39,14 @@ public class SaveCalculatorTest {
         assertTrue(testee.summe(value1, value2) == -2147483647);
     }
 
+    @Test
+    public void summeMitMINintMAXint() {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = Integer.MIN_VALUE;
+        int value2 = Integer.MAX_VALUE;
+        assertTrue(testee.summe(value1, value2) == -1);
+    }
+
     //Testfälle zu Subtraktion
 
     @Test
