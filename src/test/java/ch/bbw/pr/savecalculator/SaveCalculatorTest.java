@@ -13,7 +13,6 @@ public class SaveCalculatorTest {
     }
 
 
-
     //Testfälle zu Addition
     @Test
     public void summe() {
@@ -23,7 +22,7 @@ public class SaveCalculatorTest {
         assertTrue(testee.summe(value1, value2) == 30);
     }
 
-    @Test (expected = ArithmeticException.class)
+    @Test(expected = ArithmeticException.class)
     public void summeMitMAXInt() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = Integer.MAX_VALUE;
@@ -57,7 +56,7 @@ public class SaveCalculatorTest {
 
 
     @Test
-    public void summeMit0 () {
+    public void summeMit0() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 0;
         int value2 = 10;
@@ -65,7 +64,7 @@ public class SaveCalculatorTest {
     }
 
     @Test
-    public void summeMit00 () {
+    public void summeMit00() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 0;
         int value2 = 0;
@@ -73,7 +72,7 @@ public class SaveCalculatorTest {
     }
 
     @Test
-    public void summeMitNegativ2 () {
+    public void summeMitNegativ2() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = -10;
         int value2 = -520;
@@ -90,7 +89,7 @@ public class SaveCalculatorTest {
         assertTrue(testee.subtraktion(value1, value2) == -10);
     }
 
-    @Test (expected = ArithmeticException.class)
+    @Test(expected = ArithmeticException.class)
     public void subtraktionMitMinInt() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = Integer.MIN_VALUE;
@@ -124,7 +123,7 @@ public class SaveCalculatorTest {
 
 
     @Test
-    public void subtraktionMit0 () {
+    public void subtraktionMit0() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 0;
         int value2 = 10;
@@ -132,7 +131,7 @@ public class SaveCalculatorTest {
     }
 
     @Test
-    public void subtraktionMit00 () {
+    public void subtraktionMit00() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 0;
         int value2 = 0;
@@ -140,7 +139,7 @@ public class SaveCalculatorTest {
     }
 
     @Test
-    public void subtraktionMitNegativ2 () {
+    public void subtraktionMitNegativ2() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = -10;
         int value2 = -10;
@@ -191,15 +190,15 @@ public class SaveCalculatorTest {
 
 
     @Test
-    public void divisionMit0 () {
+    public void divisionMit0() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 0;
         int value2 = 10;
         assertTrue(testee.division(value1, value2) == 0);
     }
 
-    @Test (expected = ArithmeticException.class)
-    public void divisionMit00 () {
+    @Test(expected = ArithmeticException.class)
+    public void divisionMit00() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = 0;
         int value2 = 0;
@@ -207,7 +206,7 @@ public class SaveCalculatorTest {
     }
 
     @Test
-    public void divisionMitNegativ2 () {
+    public void divisionMitNegativ2() {
         SaveCalculator testee = new SaveCalculator();
         int value1 = -10;
         int value2 = -10;
