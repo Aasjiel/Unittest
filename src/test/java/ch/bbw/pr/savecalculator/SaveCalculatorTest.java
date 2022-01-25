@@ -56,6 +56,15 @@ public class SaveCalculatorTest {
     }
 
 
+    @Test
+    public void summeMit0 () {
+        SaveCalculator testee = new SaveCalculator();
+        int value1 = 0;
+        int value2 = 10;
+        assertTrue(testee.summe(value1, value2) == 10);
+    }
+
+
     //Testfälle zu Subtraktion
 
     @Test
